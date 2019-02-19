@@ -1,0 +1,25 @@
+W moim RayTracerze zaimplementowałem:
+    * dwa rodzaje obiektów: sfera i płaszczyzna
+    * dwa rodzaje powierzchni: całkowicie rozpraszająca i lustrzana
+    * jeden rodzaj światła: punktowy
+
+    * wczytywanie sceny z pliku
+    * zapisywanie wyrenderowanej grafiki w pliku
+    * wyświetlanie wyrenderowanej grafiki
+
+Do zapisu i wyświetlania grafiki użyłem biblioteki HIP (Haskell Image Processing).
+
+Podczas projektowania i programowania napotykałem wiele problemów związanych
+z interpretacją fizyczną zjawisk optycznych, odbijaniem światła od powierzchni.
+Właściwie każda rzecz była tu dla mnie wyzwaniem, ale po przeczytaniu wielu
+wypowiedzi na forum internetowym oraz kilku artykułów, udało się stworzyć
+działający program.
+
+Program nie zaczął jednak działać na termin oddania zadania (mianowicie, generował
+jednolity obrazek o kolorze tła). Po długim debuggingu okazało się, że problem
+leżał po stronie parsera. Przy parsowaniu listy obiektów i świateł parser zgłaszał
+błąd, jednak leniwa ewaluacja Haskella powodowała, że mimo to program mógł wygenerować
+obraz. Po naprawieniu niewielkiego błędu, na scenie pojawiły się obiekty (ponieważ
+zostały wykryte przez parser) i obrazki zaczęły się (chyba) poprawnie renderować.
+
+Nie udało mi się jednak nic poradzić na "kropkowany" obrazek, który się renderuje.
